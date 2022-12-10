@@ -1,0 +1,69 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+  integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <title>DocuAdd Sightingment</title>
+</head>
+<nav class="navbar">
+  <a class='brand' href="{% url 'index' %}">Bear Tracker</a>
+  <ul>
+      <li>
+        <a href="{% url 'info' %}">Info</a>
+      </li>
+      <li>
+        <a href="{% url 'safety' %}">Bear Safety</a>
+      </li>
+      <li>
+        <a href="{% url 'addSighting' %}">Add a Sighting</a>
+      </li>
+    </ul>
+</nav>
+<body>
+  <div>
+    <div>
+      <h2>New Sighting</h2>
+    </div>
+    <form name="form" method="post" action="{% url 'addSighting' %}">
+      {% csrf_token %}
+      <label for='bear_type'>Bear Type:</label>
+      <select name="bear_type" id="bear_type" required>
+        <option value="">--Select Species--</option>
+        <option value="Grizzly">Grizzly</option>
+        <option value="Black">Black</option>
+        <option value="Polar">Polar</option>
+        <option value="Panda">Panda</option>
+      </select>
+  
+      <label for='bear_age'>Bear Age:</label>
+      <select name="bear_age" id="bear_age" required>
+        <option value="">--Select Age--</option>
+        <option value="Cub">Cub</option>
+        <option value="Juvenile">Juvenile</option>
+        <option value="Adult">Adult</option>
+      </select>
+  
+      <label for='bear_count'>Bear Count:</label>
+      <input type='number' step='1' name='bear_count' id='bear_count' required>
+  
+      <label for='sighting_date'>Sighting Date:</label>
+      <input type='date' name='sighting_date' id='sighting_date' required>
+
+      <label for='sighting_time'>Sighting Time:</label>
+      <input type='time' name='sighting_time' id='sighting_time' required>
+  
+      <label for='sighting_location'>Sighting Location</label>
+      <input type="text" name="sighting_location" id="sighting_location" required>
+
+      <label for='sighting_notes'>Sighting Notes:</label>
+      <textarea name='sighting_notes' id='sighting_notes'></textarea>
+      <button class="button" type="submit">Add</button>
+    </form>
+</body>
+</html>

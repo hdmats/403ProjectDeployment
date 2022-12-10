@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Safety</title>
+</head>
+<nav class="navbar">
+    <a class='brand' href="{% url 'index' %}">Bear Tracker</a>
+    <ul>
+        <li>
+          <a href="{% url 'info' %}">Info</a>
+        </li>
+        <li>
+          <a href="{% url 'safety' %}">Bear Safety</a>
+        </li>
+        <li>
+          <a href="{% url 'addSighting' %}">Add a Sighting</a>
+        </li>
+      </ul>
+</nav>
+<body>
+    <div>
+        <div>
+            <h1>Bear Safety</h1>
+        </div>
+        <div class="safety">
+            <div>
+                <h2>Why is the perfect bear proof bin impossible?</h2>
+                <h3 class="quote">"There is considerable overlap between the intelligence of the smartest bears and the dumbest tourists"</h3>
+                <h3 style="text-align:right; margin-bottom:3rem;">- Park Ranger</h3>
+                <p style="">Be smarter than a bear. Learn about bear safety</p>
+            </div>
+          <img class="" src={% static 'img/bearbox.jpg' %} alt="..." />
+        </div>
+        <div class="aboutSafety ">
+            <h1 class="runnertext">Stay Safe Around Bears</h1>
+        </div>
+        <div class="indexInfo">
+            <div>
+                <ol>
+                    <li>Be aware of your surroundings and avoid surprising bears. 
+                        Make noise, sing, clap, or talk loudly when you are hiking 
+                        in bear country to let bears know you are there.</li>
+                    <li>Keep a safe distance from bears. Never approach a bear, 
+                        especially if it is a mother with cubs. If you see a bear, 
+                        avoid direct eye contact, as this can be seen as a threat.</li>
+                    <li>Do not feed bears. Bears that become accustomed to human food can 
+                        become aggressive and dangerous. Keep a clean campsite and store all food, 
+                        trash, and other scented items in bear-proof containers or locked in your vehicle.</li>
+                    <li>Carry bear spray and know how to use it. Bear spray is a non-lethal way to deter bears if they charge or attack. 
+                        Keep it readily accessible and know how to use it properly.</li>
+                    <li>If you see a bear, stay calm and do not run. Running can trigger 
+                        a bear's predatory instincts and may cause it to chase you. 
+                        Instead, slowly back away and give the bear plenty of space to pass.</li>
+                </ol>
+            </div>
+            <img class="indexPhoto" src="{% static 'img/grizzly-bear.jpg' %}" alt="">
+        </div>
+        <div class="indexInfo">
+            <div>
+                <h2>To safely bear watch, follow these guidelines:</h2>
+                <ol>
+                    <li>Choose a safe location. Avoid areas where bears are known to frequent, 
+                        such as berry patches or streams where they may be fishing. 
+                        Look for areas with good visibility and a safe distance from the bears.</li>
+                    <li>Use binoculars or a spotting scope to watch bears from a distance. 
+                        This will allow you to see the bears without disturbing them or putting yourself in danger.</li>
+                </ol>
+            </div>
+            <img class="indexPhoto" src="{% static 'img/tourists.jpg' %}" alt="">
+        </div>
+    </div>
+</body>
+<!-- Site footer -->
+<footer class="footer-distributed">
+    <div class="footer-left">
+        <p class="footer-links">
+            <a class="link-1" href="{% url 'index' %}">Home</a>
+            <a href="{% url 'info' %}">Info</a>
+            <a href="{% url 'safety' %}">Bear Safety</a>
+            <a href="{% url 'addSighting' %}">Add a Sighting</a>
+        </p>
+        <p>Bear Tracker &copy; 2022</p>
+    </div>
+</footer>
+</html>

@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Homepage</title>
+</head>
+<nav class="navbar">
+    <a class='brand' href="{% url 'index' %}">Bear Tracker</a>
+    <ul>
+        <li>
+          <a href="{% url 'info' %}">Info</a>
+        </li>
+        <li>
+          <a href="{% url 'safety' %}">Bear Safety</a>
+        </li>
+        <li>
+          <a href="{% url 'addSighting' %}">Add a Sighting</a>
+        </li>
+      </ul>
+</nav>
+<body>
+    <div class="wrapper">
+        <div>
+          <div class="hero-text">
+            <h1 class="herotextoverride">Yellowstone Bears</h1>
+            <a class='button' href="{% url 'info'%}">Sightings</a>
+          </div>
+          <img class="hero-image" src={% static 'img/hero.jpg' %} alt="..." />
+        <div class="intro">
+            <div>
+                <h2>Welcome to the Yellowstone Bear Tracker!</h2>
+                <p> This website provides a venue for all the bear related info you need for your trip at Yellowstone. 
+                    We provided an open database to allow users to view bear sightings and details, as well as enter in and update your very own encounters! 
+                    Also, we have a page on bear safety so you can be educated and prepared in the event you encounter a bear. 
+                    We hope you enjoy your trip. Happy bear finding!</p>
+            </div>
+        </div>
+        </div>
+        <div class="fact">
+            <h1 class ='runner runnertext'>There are over 500 bears in the Greater Yellowstone Ecosystem </h1>
+        </div>
+        <div class="indexInfo">
+            <div>
+                <p>Bears have a high IQ- They have the largest and most complex brain compared to other land mammals their size. 
+                    Grizzly bears can remember valuable spots for food after multiple years, and have even been observed to 
+                    cover their tracks and hide behind rocks or trees to avoid detection by hunters.</p>
+            </div>
+            <img class="indexPhoto" src="{% static 'img/bear1.jpg' %}" alt="">
+        </div>
+        <div class="indexInfo">
+            <img class="indexPhoto" src="{% static 'img/bear2.jpg' %}" alt="">
+            <div>
+                <p>Bears are fiercely protective of their family members and will go to great lengths to keep them safe. 
+                    This often means putting their own lives on the line, as bears will fight aggressively to defend their young from threats. 
+                    In fact, some bears have been known to fight to the death in order to protect their cubs or siblings. 
+                    This strong sense of family and loyalty is just one of the many reasons why bears are such amazing animals.</p>
+            </div>
+        </div>
+        <div class="indexInfo">
+            <div>
+                <p> Bear sightings are often more common in urban or suburban areas than in wilderness areas. 
+                    This is because bears are opportunistic feeders and will take advantage of any available food source, 
+                    including garbage, bird feeders, and even pet food left outside. As a result, bears will often venture 
+                    into populated areas in search of a meal, leading to more frequent sightings. In fact, some bear populations
+                    are so used to human presence that they have become accustomed to people and will even approach them in search of food. 
+                    This can be dangerous for both the bears and humans, so it is important to take steps to prevent bears from accessing human food sources.</p>
+            </div>
+            <img class="indexPhoto" src="{% static 'img/bear3.jpg' %}" alt="">
+        </div>
+    </div>
+</body>
+<!-- Site footer -->
+<footer class="footer-distributed">
+    <div class="footer-left">
+        <p class="footer-links">
+            <a class="link-1" href="{% url 'index' %}">Home</a>
+            <a href="{% url 'info' %}">Info</a>
+            <a href="{% url 'safety' %}">Bear Safety</a>
+            <a href="{% url 'addSighting' %}">Add a Sighting</a>
+        </p>
+        <p>Bear Tracker &copy; 2022</p>
+    </div>
+</footer>
+</html>       

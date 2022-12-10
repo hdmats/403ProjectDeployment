@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %} </title>
+</head>
+<nav class="navbar">
+    <a class='brand' href="{% url 'index' %}">Bear Tracker</a>
+    <ul>
+        <li>
+          <a href="{% url 'info' %}">Info</a>
+        </li>
+        <li>
+          <a href="{% url 'safety' %}">Bear Safety</a>
+        </li>
+        <li>
+          <a href="{% url 'addSighting' %}">Add a Sighting</a>
+        </li>
+      </ul>
+</nav>
+<body>
+    <!--class is added-->
+    <div>
+        {% block content %}
+
+        {% endblock %}
+    </div>
+</body>
+<!-- Site footer -->
+<footer class="footer-distributed">
+  <div class="footer-left">
+      <p class="footer-links">
+          <a class="link-1" href="{% url 'index' %}">Home</a>
+          <a href="{% url 'info' %}">Info</a>
+          <a href="{% url 'safety' %}">Bear Safety</a>
+          <a href="{% url 'addSighting' %}">Add a Sighting</a>
+      </p>
+      <p>Bear Tracker &copy; 2022</p>
+  </div>
+</footer>
+</html>

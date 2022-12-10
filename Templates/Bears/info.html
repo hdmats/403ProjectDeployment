@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Info</title>
+</head>
+<nav class="navbar">
+    <a class='brand' href="{% url 'index' %}">Bear Tracker</a>
+    <ul>
+        <li>
+          <a href="{% url 'info' %}">Info</a>
+        </li>
+        <li>
+          <a href="{% url 'safety' %}">Bear Safety</a>
+        </li>
+        <li>
+          <a href="{% url 'addSighting' %}">Add a Sighting</a>
+        </li>
+      </ul>
+</nav>
+<body>
+    <div class="wrapper">
+        <h2>Yellowstone Bear Sightings</h2>
+        <table class='table'>
+            <thead>
+                <tr>
+                    <td>Bear Type</td>
+                    <td>Bear Age</td>
+                    <td>Bear Count</td>
+                    <td>Sighting Date</td>
+                    <td>Sighting Time</td>
+                    <td>Sighting Location</td>
+                    <td>Sighting Notes</td>
+                    <td>Edit</td>
+                    <td>Delete</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for sighting in sightings %}
+                <tr>
+                    <td>{{sighting.bear_type}}</td>
+                    <td>{{sighting.bear_age}}</td>
+                    <td>{{sighting.bear_count}}</td>
+                    <td>{{sighting.sighting_date}}</td>
+                    <td>{{sighting.sighting_time}}</td>
+                    <td>{{sighting.sighting_location}}</td>
+                    <td>{{sighting.sighting_notes}}</td>
+                    <td><a class="button" href="{% url 'showSighting' sighting_id=sighting.id %}">Edit</a></td>
+                    <td><a class="button" href="{% url 'deleteSighting' sighting_id=sighting.id %}">Delete</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="infoButton">
+            <a class="button" href="{% url 'addSighting' %}">Add Sighting</a>
+        </div>
+    </div>
+</body>
+<footer class="footer-distributed">
+    <div class="footer-left">
+        <p class="footer-links">
+            <a class="link-1" href="{% url 'index' %}">Home</a>
+            <a href="{% url 'info' %}">Info</a>
+            <a href="{% url 'safety' %}">Bear Safety</a>
+            <a href="{% url 'addSighting' %}">Add a Sighting</a>
+        </p>
+        <p>Bear Tracker &copy; 2022</p>
+    </div>
+</footer>
+</html>
