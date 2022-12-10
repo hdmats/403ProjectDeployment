@@ -10,7 +10,7 @@ def safetyPageView(request):
     return render(request, 'Bears/safety.html')
 
 def infoPageView(request):
-    data = Bears.objects.all()
+    data = Bears.objects.order_by('-sighting_date', '-sighting_time')
     columns = Bears._meta.get_fields()
     context = {
         "sightings" : data,
