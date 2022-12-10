@@ -8,7 +8,6 @@ class Bears(models.Model):
   sighting_date = models.DateField(default=datetime.today, blank=True)
   sighting_time = models.TimeField(default=datetime.today, blank=True)
   sighting_location = models.CharField(max_length=50)
-  sighting_photo = models.ImageField(upload_to='photos', blank=True)
   sighting_notes = models.CharField(max_length=200)
 
   def __str__(self):
