@@ -144,7 +144,7 @@ a {
 .hero-text {
   text-align: center;
   position: absolute;
-  top: 20%;
+  top: 30%;
   left: 30%;
   transform: translate(-50%, -50%);
   color: #B1BCA0;
@@ -208,7 +208,7 @@ a {
 
 .safety>div{
   padding: 1rem;
-  border: 5px solid black;
+  border: 5px solid #383D3F;
 }
 
 .safety>img{
